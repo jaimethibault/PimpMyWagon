@@ -7,6 +7,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
+gem 'faker', '~> 1.8', '>= 1.8.4'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
