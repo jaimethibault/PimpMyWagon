@@ -1,25 +1,26 @@
 <div class="container">
   <div class="row">
     <% @pimped_cars.each do |pimped_car| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to pimped_car_path(pimped_car), class: "card-link" do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.sub5zero.com/sites/default/files/uploads/2010/08/Turtle%20Power.jpg');">
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to pimped_car_path(pimped_car), class: "card-link" do %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.sub5zero.com/sites/default/files/uploads/2010/08/Turtle%20Power.jpg');">
+      </div>
+      <% end %>
+      <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+      <div class="card-details">
+        <div class="card-info">
+          <div class="card-name">
+            <h4><%= pimped_car.name %></h4>
           </div>
-       <% end %>
-
-        <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+          <div class="card-price">
+            <h4><%= pimped_car.price_per_day%>$</h4>
+          </div>
+        </div>
         <div class="card-description">
-          <div class="card-info">
-            <div class="name">
-              <h4><%= pimped_car.name %></h4>
-            </div>
-            <div class="price">
-              <h4><%= pimped_car.price_per_day%>$</h4>
-            </div>
-          </div>
-            <p><%= pimped_car.description %></p>
+          <p><%= pimped_car.description %></p>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
