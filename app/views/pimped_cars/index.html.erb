@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <% @pimped_cars.each do |pimped_car| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to pimped_cars_path(@pimped_car) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.sub5zero.com/sites/default/files/uploads/2010/08/Turtle%20Power.jpg');">
+         <% end %>
+          </div>
+         <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+          <div class="card-description">
+            <div class="card-info">
+              <h4><%= pimped_car.name %></h4>
+              <h4><%= pimped_car.price_per_day%>$</h4>
+            </div>
+              <p><%= pimped_car.description %></p>
+          </div>
+       <% end %>
+    </div>
+  </div>
+</div>
