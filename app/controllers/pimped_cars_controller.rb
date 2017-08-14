@@ -3,7 +3,7 @@ class PimpedCarsController < ApplicationController
   before_action :set_pimped_cars, only: [:show]
 
   def index
-
+    @pimped_cars = PimpedCar.all
   end
 
   def show
