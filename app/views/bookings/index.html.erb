@@ -1,6 +1,10 @@
 <div class="container">
-  <%= display(@bookings, "user_bookings") %>
-  <% @cars.each do |car| %>
-    <%= display(car.bookings, "owner_bookings") %>
-  <% end %>
+  <div class="row">
+    <%= display(@bookings, "user_bookings") %>
+  </div>
+  <div class="row">
+    <% @cars.each do |car| %>
+      <%= display(car.bookings, "owner_bookings") %>
+    <% end %>
+  </div>
 </div>
