@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="text-center">You have a new rental request</h2>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4 text-center">
+      <%= simple_form_for @booking, defaults: {input_html: {class: "form-input"}} do |f| %>
+        <p>Your booking starts on:<%= @starts_at.strftime("%m/%d/%Y") %></p>
+        <p>Your booking ends on:<%= @ends_at.strftime("%m/%d/%Y") %></p>
+        <p>Booking status: <%= @booking.status %></p>
+        <%= f.input :status, collection: @status_available %>
+        <%= f.button :submit, class: "btn btn-danger" %>
+      <% end %>
+        <%= link_to "back", bookings_path  %>
+    </div>
+  </div>
+</div>
