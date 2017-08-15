@@ -1,7 +1,6 @@
 <!-- Todo: change to PimpedCar photo -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://cdn3.list25.com/wp-content/uploads/2013/07/tricked-out-car.jpg');">
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-8 car-info">
@@ -12,25 +11,26 @@
     <div class="col-md-4 car-booking booking-form">
       <!-- Todo: replace by simple_form form -->
       <form>
-      <div class="form-group row">
-        <label for="example-date-input" class="col-2 col-form-label">Start Date</label>
-        <div class="col-10">
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+        <div class="form-group row">
+          <label for="example-date-input" class="col-2 col-form-label">Start Date</label>
+          <div class="col-10">
+            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-date-input" class="col-2 col-form-label">End Date</label>
-        <div class="col-10">
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+        <div class="form-group row">
+          <label for="example-date-input" class="col-2 col-form-label">End Date</label>
+          <div class="col-10">
+            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="exampleInputFile">Price per Day: <%= @pimped_car.price_per_day %>$</label>
-      </div>
-      <div class="form-group row">
-        <label for="exampleInputFile">Total Price: TODO</label>
-      </div>
-      <button type="submit" class="btn btn-danger row">Submit</button>
+        <div class="form-group row">
+          <label for="exampleInputFile">Price per Day: <%= @pimped_car.price_per_day %>$</label>
+        </div>
+        <div class="form-group row">
+          <label for="exampleInputFile">Total Price: TODO</label>
+        </div>
+        <button type="submit" class="btn btn-danger row">Submit</button>
       </form>
+    </div>
   </div>
 </div>
