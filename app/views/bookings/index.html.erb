@@ -1,0 +1,6 @@
+<div class="container">
+  <%= display(@bookings, "user_bookings") %>
+  <% @cars.each do |car| %>
+    <%= display(car.bookings, "owner_bookings") %>
+  <% end %>
+</div>
