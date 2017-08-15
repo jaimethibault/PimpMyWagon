@@ -1,19 +1,17 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edid, :update]
+  before_action :set_booking, only: [:show, :edit, :update]
 
   def index
 
   end
 
   def edit
-    @booking = Booking.find(params[:id])
     @starts_at = @booking.starts_at
     @ends_at = @booking.ends_at
     @status_available = ["Declined", "Accepted"]
   end
 
   def update
-    @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     if @booking.save
      redirect_to bookings_path

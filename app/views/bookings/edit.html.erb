@@ -7,8 +7,9 @@
         <p>Your booking ends on:<%= @ends_at.strftime("%m/%d/%Y") %></p>
         <p>Booking status: <%= @booking.status %></p>
         <%= f.input :status, collection: @status_available %>
-        <%= f.button :submit %>
+        <%= f.button :submit, class: "btn btn-danger" %>
       <% end %>
+        <%= link_to "back", bookings_path  %>
     </div>
   </div>
 </div>
