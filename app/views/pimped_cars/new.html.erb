@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+    <h4> 🏎Riders are waiting for your pimped car, rent it now ! 🏎</h4>
+      <%= simple_form_for(@pimped_car) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price_per_day %>
+      <%= f.submit "Add your Pimped Car !", class: "btn - btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
