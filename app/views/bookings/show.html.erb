@@ -9,7 +9,7 @@
       <p>Status: <%= @booking.status %></p>
     </div>
     <div class="booking-car-infos">
-      <%= link_to 'My PimpedCar', pimped_car_path %>
+      <%= link_to 'My PimpedCar', pimped_car_path(@booking.pimped_car_id) %>
     </div>
      <div class="booking-users-infos">
   <%= @owner.email%>
@@ -18,4 +18,5 @@
     <div class="booking-total">
       <p>Total = $<%= @total %></p>
     </div>
+  </div>
 </div>
