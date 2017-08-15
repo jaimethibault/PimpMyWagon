@@ -1,10 +1,3 @@
-puts "Deleting Bookings"
-Booking.destroy_all
-puts "Deleting Pimped Cars"
-PimpedCar.destroy_all
-puts "Deleting Users"
-User.destroy_all
-
 puts "Creating Users"
 10.times do
   user = User.new
@@ -39,8 +32,8 @@ puts "Pimped Cars created"
 puts "Creating Bookings"
 10.times do
   #todo, change to a random datetime
-  starts_at = Time.now-[1,2,3,4,5].sample
-  ends_at = Time.now
+  ends_at = Date.new(2017,9,3)
+  starts_at = ends_at-[1,2,3,4,5].sample
   status = "pending"
   pimped_car_id = PimpedCar.all.sample.id
   user_id = User.all.sample.id
