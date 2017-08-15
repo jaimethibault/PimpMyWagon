@@ -3,7 +3,9 @@ class BookingsController < ApplicationController
   before_action :set_bookings, only: [:show, :total, :edit, :update]
 
   def index
+    # Get all the booking regarding the current user
     @bookings = current_user.bookings
+    # Get all the cars related to a user
     @cars = PimpedCar.where("user_id = #{current_user.id}")
   end
 
@@ -76,6 +78,9 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:starts_at, :ends_at, :status, :user_id, :pimped_car_id)
   end
 
+  # Method that check if a table is empty or not.
+  # If empty the partial is not displayed
+  # Only one render is allowed by method
   def display(booking, view_path)
     if booking.empty?
     else

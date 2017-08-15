@@ -1,8 +1,11 @@
 <div class="container">
   <div class="row">
+    <!-- Method call (defined has helper) to display or not the user bookings  -->
     <%= display(@bookings, "user_bookings") %>
   </div>
   <div class="row">
+    <!-- Method call (defined has helper) to display or not owner bookings  -->
+    <!-- Iteration on @cars to access each car and check if this car has been booked -->
     <% @cars.each do |car| %>
       <%= display(car.bookings, "owner_bookings") %>
     <% end %>
