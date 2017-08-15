@@ -78,15 +78,25 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:starts_at, :ends_at, :status, :user_id, :pimped_car_id)
   end
 
-  # Method that check if a table is empty or not.
+  # Method that check if a Owner booking table is empty or not.
   # If empty the partial is not displayed
   # Only one render is allowed by method
-  def display(booking, view_path)
+  def display_owner(booking, view_path)
     if booking.empty?
     else
       render partial: "#{view_path}"
     end
   end
 
-  helper_method :total, :email_owner, :email_renter, :display
+  # Method that check if a user booking table is empty or not.
+  # If empty the partial is not displayed
+  # Only one render is allowed by method
+  def display_user(booking, view_path)
+    if booking.empty?
+    else
+      render partial: "#{view_path}"
+    end
+  end
+
+  helper_method :total, :email_owner, :email_renter, :display_owner, :display_user
 end
