@@ -1,7 +1,7 @@
-<%= simple_form_for [@pimpedcar, @booking] do |f| %>
+<%= simple_form_for [@pimped_car, @booking] do |f| %>
   <%= f.input :starts_at, as: :date, html5: true, label: "Start Date" %>
   <%= f.input :ends_at, as: :date, html5: true, label: "End Date" %>
-  <%= f.label "Price per Day: #{@pimpedcar.price_per_day} $" %>
+  <%= f.label "Price per Day: #{@pimped_car.price_per_day} $" %>
   <%= f.label "Total Price: TODO" %>
   <%= f.submit "submit", class: "btn btn-danger" %>
 <% end %>

@@ -6,9 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @starts_at = @booking.starts_at
-    @ends_at = @booking.ends_at
-    @status_available = ["Declined", "Accepted"]
+    @status_available = ["declined", "accepted"]
   end
 
   def update
