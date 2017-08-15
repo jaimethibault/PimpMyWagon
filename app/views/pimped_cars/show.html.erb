@@ -11,26 +11,7 @@
     </div>
     <div class="col-md-4 car-booking booking-form">
       <!-- Todo: replace by simple_form form -->
-      <form>
-      <div class="form-group row">
-        <label for="example-date-input" class="col-2 col-form-label">Start Date</label>
-        <div class="col-10">
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="example-date-input" class="col-2 col-form-label">End Date</label>
-        <div class="col-10">
-          <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="exampleInputFile">Price per Day: <%= @pimpedcar.price_per_day %>$</label>
-      </div>
-      <div class="form-group row">
-        <label for="exampleInputFile">Total Price: TODO</label>
-      </div>
-      <button type="submit" class="btn btn-danger row">Submit</button>
-      </form>
+      <%= render 'bookings/form_on_show' %>
+    </div>
   </div>
 </div>
