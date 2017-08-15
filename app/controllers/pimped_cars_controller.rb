@@ -7,6 +7,7 @@ class PimpedCarsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -14,10 +15,13 @@ class PimpedCarsController < ApplicationController
   end
 
   def create
-   @pimped_car = PimpedCar.new(set_params)
-   @pimped_car.user_id = current_user.id
-   @pimped_car.save
-   redirect_to pimped_cars_path(@pimped_car)
+    @pimped_car = PimpedCar.new(set_params)
+    @pimped_car.user_id = current_user.id
+    if @pimped_car.save
+      redirect_to pimped_cars_path(@pimped_car)
+    else
+      render :new
+    end
   end
 
   private

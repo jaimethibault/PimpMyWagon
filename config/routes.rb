@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :pimped_cars, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
   end
-  resources :bookings, only: [:index, :show, :new, :edit, :update]
+  resources :bookings, only: [:index, :show, :edit, :update]
 end
