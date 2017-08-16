@@ -11,9 +11,9 @@
     <div class="booking-car-infos">
       <%= link_to 'My PimpedCar', pimped_car_path(@booking.pimped_car_id) %>
     </div>
-     <div class="booking-users-infos">
-  <%= @owner.email%>
-  <%= @renter.email%>
+    <div class="booking-users-infos">
+      <%= @owner %>
+      <%= @renter %>
     </div>
     <div class="booking-total">
       <p>Total = $<%= @total %></p>
