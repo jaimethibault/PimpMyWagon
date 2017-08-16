@@ -1,22 +1,36 @@
 <div class="container">
   <div class="row text-center">
-    <h1>Your booking</h1>
-  </div>
-  <div class="col-xs-4 col-xs-offset-4 text-center">
-    <div class="booking-date-infos">
-      <p>Starts on: <%= @booking.starts_at %></p>
-      <p>Ends on: <%= @booking.ends_at %></p>
-      <p>Status: <%= @booking.status %></p>
-    </div>
-    <div class="booking-car-infos">
-      <%= link_to 'My PimpedCar', pimped_car_path(@booking.pimped_car_id) %>
-    </div>
-     <div class="booking-users-infos">
-  <%= @owner.email%>
-  <%= @renter.email%>
-    </div>
-    <div class="booking-total">
-      <p>Total = $<%= @total %></p>
+    <div class="col-sm-10 col-sm-offset-1 text-center">
+      <h1>Nearly booked Rider!</h1>
+      <p> Waiting for <%= @owner %> to accept your request to ride an AWESOME Pimped car ! </p>
+
+      <h3>Booking information</h3>
+      <% if @booking.pimped_car.photo? %>
+        <%= cl_image_tag @booking.pimped_car.photo.path, width: 400, height: 200, crop: :fill %>
+      <% end %>
+      <div class="booking-car-infos">
+      </div>
+      <div class="booking-info">
+        <div class ="status-box">
+          <h4>Status: <span class="status"> <%= @booking.status %></span> </h4>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1  booking-date-infos">
+            <p> From: <%= @booking.starts_at.strftime("%A %d %B %Y") %></p>
+
+            <p> To: <%= @booking.ends_at.strftime("%A %d %B %Y") %></p>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1 booking-owner-infos">
+            <p>Main Contact: <%= @owner %></p>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1 booking-total">
+          <p>Number of days = <%= (@booking.ends_at - @booking.starts_at).to_i/86400 %> days</p>
+          <p>Total = $<%= @total %></p>
+          <div class="backlink">
+            <%= link_to 'More details on the PimpedCar you just booked', pimped_car_path(@booking.pimped_car_id) %> <br><br>
+            <%= link_to "Review all your bookings", bookings_path %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

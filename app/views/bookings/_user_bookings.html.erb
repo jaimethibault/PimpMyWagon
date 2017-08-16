@@ -1,0 +1,47 @@
+<!-- Partial that is displayed when a user made reservations -->
+<h2 class="text-center">Your bookings</h2>
+<div class="col-xs-12 list-title">
+  <div class="date-list-title">
+    <ul class="list-inline">
+      <li>Starts-on </li>
+      <li>Ends-on</li>
+    </ul>
+  </div>
+  <div class="user-list-title">
+    <ul class="list-inline">
+      <li>Owner Email</li>
+      <li>Renter Email</li>
+      <li>Rented car</li>
+    </ul>
+  </div>
+  <div class="price-list-title">
+    <ul class="list-inline">
+      <li>Total</li>
+      <li>Status</li>
+    </ul>
+  </div>
+</div>
+<% @bookings.each do |booking| %>
+<div class="col-xs-12 list-information">
+  <div class="date-list-information">
+    <ul class="list-inline">
+      <li><%= booking.starts_at.strftime("%m/%d/%Y") %> </li>
+      <li><%= booking.ends_at.strftime("%m/%d/%Y") %></li>
+    </ul>
+  </div>
+  <div class="user-list-information">
+    <ul class="list-inline">
+      <li><%= email_owner(booking) %></li>
+      <li><%= email_renter(booking) %></li>
+      <li><%= link_to 'PimpedCar Page', pimped_car_path(booking.pimped_car_id) %></li>
+    </ul>
+  </div>
+  <div class="price-list-information">
+    <ul class="list-inline">
+      <li>$ <%= total(booking) %></li>
+      <li><span class="pending"> <%= booking.status %></span> </li>
+    </ul>
+  </div>
+</div>
+<% end %>
+

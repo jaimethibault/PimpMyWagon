@@ -1,15 +1,30 @@
 <!-- Todo: change to PimpedCar photo -->
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://cdn3.list25.com/wp-content/uploads/2013/07/tricked-out-car.jpg');">
+<div class="banner"
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @pimped_car.photo.path, crop: :fill %>')">
 </div>
 <div class="container">
   <div class="row">
     <div class="col-md-8 car-info">
-      <h1><%= @pimped_car.name %></h1>
+      <hr>
+      <div class="carname-carowner">
+        <div class="carname">
+          <h1><%= @pimped_car.name %></h1>
+        </div>
+        <div class="carowner">
+          <div class="ownerimg">
+            <% owner = User.find(@pimped_car.user_id) %>
+            <% owner_url = owner.facebook_picture_url || "http://placehold.it/30x30" %>
+            <%= image_tag owner_url, class: "avatar" %>
+          </div>
+          <div class="ownername">
+            <p><%= owner.first_name %> <%= owner.last_name %></p>
+          </div>
+        </div>
+      </div>
+      <hr>
       <p><%= @pimped_car.description %></p>
-      <p><%= @pimped_car.user.email %></p>
     </div>
     <div class="col-md-4 car-booking booking-form">
-      <!-- Todo: replace by simple_form form -->
       <%= render 'bookings/form_on_show' %>
     </div>
   </div>
