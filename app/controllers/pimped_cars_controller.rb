@@ -27,7 +27,7 @@ class PimpedCarsController < ApplicationController
   private
 
   def set_params
-    params.require(:pimped_car).permit(:name, :price_per_day, :description)
+    params.require(:pimped_car).permit(:name, :price_per_day, :description, :photo)
   end
 
   def set_pimped_cars

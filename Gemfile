@@ -17,7 +17,15 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
+<<<<<<< HEAD
 gem 'omniauth-facebook'
+=======
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
+
+>>>>>>> 4a64d5d25c7dbcfcd3e01d1813e14771a6b76c75
 
 group :development, :test do
   gem 'pry-byebug'

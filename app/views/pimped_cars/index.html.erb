@@ -3,7 +3,7 @@
     <% @pimped_cars.each do |pimped_car| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to pimped_car_path(pimped_car), class: "card-link" do %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.sub5zero.com/sites/default/files/uploads/2010/08/Turtle%20Power.jpg');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pimped_car.photo.path, height: 300, width: 400, crop: :fill %>');">
       </div>
       <% end %>
       <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
