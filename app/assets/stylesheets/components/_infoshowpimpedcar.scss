@@ -1,0 +1,37 @@
+.carname-carowner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.carname {
+  max-width: 500px;
+  h1 {
+    margin: 0px;
+  }
+}
+
+.carowner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.ownerimg {
+  margin: 5px 0px;
+}
+
+.avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+hr {
+  border-color: lightgrey;
+  margin: 10px 0px;
+}
+

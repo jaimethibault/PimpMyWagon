@@ -1,15 +1,29 @@
 <!-- Todo: change to PimpedCar photo -->
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.8) 0%, rgba(0,36,61,0.8) 50%), url('<%= cl_image_path @pimped_car.photo.path, height: 300, width: 400, crop: :fill %>');">
+<div class="banner"
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @pimped_car.photo.path, crop: :fill %>')">
 </div>
 <div class="container">
   <div class="row">
     <div class="col-md-8 car-info">
-      <h1><%= @pimped_car.name %></h1>
+      <hr>
+      <div class="carname-carowner">
+        <div class="carname">
+          <h1><%= @pimped_car.name %></h1>
+        </div>
+        <div class="carowner">
+          <div class="ownerimg">
+            <% owner_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+            <%= image_tag owner_url, class: "avatar" %>
+          </div>
+          <div class="ownername">
+            <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+          </div>
+        </div>
+      </div>
+      <hr>
       <p><%= @pimped_car.description %></p>
-      <p><%= @pimped_car.user.email %></p>
     </div>
     <div class="col-md-4 car-booking booking-form">
-      <!-- Todo: replace by simple_form form -->
       <%= render 'bookings/form_on_show' %>
     </div>
   </div>
