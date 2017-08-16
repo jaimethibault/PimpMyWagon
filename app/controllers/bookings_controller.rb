@@ -81,22 +81,22 @@ class BookingsController < ApplicationController
   # Method that check if a Owner booking table is empty or not.
   # If empty the partial is not displayed
   # Only one render is allowed by method
-  def display_owner(booking, view_path)
-    if booking.empty?
-    else
-      render partial: "#{view_path}"
-    end
-  end
+  # def display_owner(booking, view_path)
+  #   if booking.empty?
+  #   else
+  #     render partial: "#{view_path}"
+  #   end
+  # end
 
   # Method that check if a user booking table is empty or not.
   # If empty the partial is not displayed
   # Only one render is allowed by method
-  def display_user(booking, view_path)
-    if booking.empty?
-    else
-      render partial: "#{view_path}"
-    end
-  end
+  # def display_user(booking, view_path)
+  #   if booking.empty?
+  #   else
+  #     render partial: "#{view_path}"
+  #   end
+  # end
 
-  helper_method :total, :email_owner, :email_renter, :display_owner, :display_user
+  helper_method :total, :email_owner, :email_renter
 end

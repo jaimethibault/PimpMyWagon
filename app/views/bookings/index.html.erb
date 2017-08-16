@@ -9,10 +9,16 @@
   <div class="row">
     <!-- Method call (defined has helper) to display or not owner bookings  -->
     <!-- Iteration on @cars to access each car and check if this car has been booked -->
-    <% @cars.each do |car| %>
+    <% @cars.each_with_index do |car, index| %>
+      <% @car = car %>
       <% if car.bookings.empty? %>
+        <div class="text-center">
+          <h2 class="text-center"><%= index + 1 %>- <%= car.name %></h2>
+          <p>No reservations available yet for this car</p>
+        </div>
       <% else %>
-          <%= render partial: "owner_bookings" %>
+          <h2 class="text-center"><%= index + 1 %>- <%= car.name %></h2>
+          <%= render partial: "owner_bookings", object: @car %>
       <% end %>
     <% end %>
   </div>

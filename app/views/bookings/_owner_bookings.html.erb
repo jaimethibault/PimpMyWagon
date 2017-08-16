@@ -1,5 +1,4 @@
 <!-- Partial displayed to owner when his cars has been booked -->
-  <h2 class="text-center">Revervations made for your Pimped Cars</h2>
   <div class="col-xs-12 list-title">
     <div class="date-list-title">
       <ul class="list-inline">
@@ -19,9 +18,10 @@
     </div>
   </div>
   <!-- Iteration on @cars to get access each car -->
-  <% @cars.each do |car| %>
+
+
     <!-- Store each bookings relative to a car -->
-    <% bookings = car.bookings %>
+    <% bookings = @car.bookings %>
     <!-- Iterate on bookings to display each booking for a car -->
     <% bookings.each do |booking| %>
       <div class="col-xs-12 list-information">
@@ -43,5 +43,5 @@
         </div>
       </div>
     <% end %>
-  <% end %>
+
 
