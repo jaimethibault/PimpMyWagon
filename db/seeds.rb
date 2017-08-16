@@ -28,18 +28,18 @@ random_name = [
   "Life without tunning isn't living"
 ]
 urls = [
-  "http://www.sub5zero.com/sites/default/files/uploads/2010/08/Turtle%20Power.jpg",
-  "http://www.sub5zero.com/sites/default/files/uploads/2010/08/WTF%20Mobile.jpg",
-  "http://www.sub5zero.com/sites/default/files/uploads/2010/08/Pimp%20Pacman.jpg",
-  "http://www.sub5zero.com/sites/default/files/uploads/2010/08/Pokemon%20Beetle.jpg",
-  "http://prod-cdn-history-co-uk.s3.amazonaws.com/s3fs-public/styles/landscape__desktop/public/pimped-out-celebrity-car_0.jpg?WKU9WyLWHLOdfrgdE0lNPzuf0S_cKKBP&timestamp=1494236040",
-  "http://1.bp.blogspot.com/-R1PFc5MvqEg/VTWBIgBFkuI/AAAAAAAAABs/BTQaExi3XrQ/s1600/pimp%2Bmy%2Bride%2B%2B%2BGoogle%2BSearch.png",
-  "http://www.sub5zero.com/sites/default/files/uploads/2010/08/McDonalds%20Mobie%3B.jpg",
-  "http://www.sub5zero.com/sites/default/files/uploads/2010/08/Pimp%20Pacman.jpg",
-  "http://www.sub5zero.com/sites/default/files/uploads/2010/08/The%20Crap%20Mobile.jpg",
-  "http://prod-cdn-history-co-uk.s3.amazonaws.com/s3fs-public/styles/landscape__desktop/public/pimped-out-celebrity-car_0.jpg?WKU9WyLWHLOdfrgdE0lNPzuf0S_cKKBP&timestamp=1494236040",
-  "https://sixprizes.com/wp-content/uploads/pikachu-car.jpg",
-  "http://cdn.smosh.com/sites/default/files/legacy.images/smosh-pit/052011/donknuts-spongebob.jpg"
+  "http://foreignaffairsmotorsports.com/wp-content/uploads/2016/11/awe-tuning.jpg",
+  "http://www.motiveempire.com/wp-content/uploads/2015/07/MG_3218.jpg",
+  "https://s-media-cache-ak0.pinimg.com/originals/73/06/d3/7306d34409687811be144aa2bb9c71e8.jpg",
+  "http://www.toubiz.mu/uploads/homepagecms/21495307225.jpg",
+  "http://www.idgraphique.fr/asset/tmp/slide/decoration-voiture-sport-lettrage-597.jpg",
+  "http://roush.mustangmotorsport.com.au/images/roush/slideshow/slide_r350t_orange.jpg",
+  "http://www.aspire-design.co.uk/wp-content/uploads/2014/12/Aspire-Design-Giovanni-Wheels-image-08-Large.jpg",
+  "http://www.covingtonscustoms.com/Pics/TopBanner/05.jpg",
+  "http://modena-motorsport.de/wp-content/uploads/layerslider/FullWidth-Modena-Motorsport-Home-I/Modena-Motorsport-4.jpg",
+  "http://modena-motorsport.de/wp-content/uploads/2016/12/Modena-Motorsport-16.jpg",
+  "http://www.motiveempire.com/wp-content/uploads/2015/07/MG_3163.jpg",
+  "http://www.motiveempire.com/wp-content/uploads/2015/04/MG_5125.jpg"
 ]
 i = 0
 10.times do
