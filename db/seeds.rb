@@ -6,26 +6,36 @@ puts "Destroying Users"
 User.destroy_all
 
 puts "Creating Users"
-10.times do
+i = 0
+3.times do
   user = User.new
   user.email = Faker::Internet.email
   user.password = 'password'
+  user.first_name = Faker::Name.first_name
+  user.last_name = Faker::Name.last_name
+  urls = [
+    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/c25.0.150.150/1622165_10152629789833079_1383118263_n.jpg?oh=5f54a89ac3f182ab5512a55cffb434fb&oe=5A34E9A4",
+    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/c0.53.320.320/p320x320/31831_127280883952890_785031_n.jpg?oh=911201f6292f661157f48cc764d165f5&oe=5A31B029",
+    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/p320x320/17757603_10154567963552817_4400652973366918292_n.jpg?oh=0e75a4524b04d3c45127dcfd18607611&oe=59EBFA1C"
+  ]
+  user.facebook_picture_url = urls[i]
   user.save!
+  i += 1
 end
 puts "Users created"
 
 puts "Creating Pimped Cars"
-random_name = [
-  "Peugeot 206 blue sport version",
-  "My tunning car can be yours for one day",
-  "I am tunning",
-  "Great tunning car",
-  "Rent my car for a great afternoon",
-  "My car is simply the best tunning car in the world",
-  "I am american and I love Tunning",
-  "Do you love tunning car ? Do you ?",
-  "Tunning is life and you should know it",
-  "Life without tunning isn't living"
+car_name = [
+  "BMW M3 blue sport version",
+  "Subaru Impreza White for one day",
+  "Porsche Carrera old model vintage",
+  "Lamborghini mat and orange yeah",
+  "Rallye car Peugeot",
+  "Orange show off Mustang",
+  "Mercedes Yellox SUV oh my god",
+  "Keke's 3 wheels motorcycle",
+  "Green classy Ferrari",
+  "Red classic Ferrari"
 ]
 urls = [
   "http://foreignaffairsmotorsports.com/wp-content/uploads/2016/11/awe-tuning.jpg",
@@ -43,7 +53,7 @@ urls = [
 ]
 i = 0
 10.times do
-  pimped_car = PimpedCar.new(name: random_name.sample)
+  pimped_car = PimpedCar.new(name: car_name[i])
   pimped_car.description = Faker::Lorem.paragraph
   pimped_car.price_per_day = rand(50..100)
   pimped_car.user = User.all.sample
