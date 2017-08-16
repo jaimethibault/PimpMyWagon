@@ -13,3 +13,16 @@
   li {
   }
 }
+
+.pending {
+  color: orange;
+}
+.pending a {
+  text-decoration: none;
+  color: orange;
+  }
+
+.pending a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }

@@ -15,7 +15,10 @@
     </ul>
   </div>
   <div class="price-list-title">
-    <p>Total</p>
+    <ul class="list-inline">
+      <li>Total</li>
+      <li>Status</li>
+    </ul>
   </div>
 </div>
 <% @bookings.each do |booking| %>
@@ -34,7 +37,10 @@
     </ul>
   </div>
   <div class="price-list-information">
-    <p>Total: $ <%= total(booking) %></p>
+    <ul class="list-inline">
+      <li>$ <%= total(booking) %></li>
+      <li><span class="pending"> <%= booking.status %></span> </li>
+    </ul>
   </div>
 </div>
 <% end %>
