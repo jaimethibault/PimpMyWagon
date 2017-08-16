@@ -2,35 +2,42 @@
   <div class="row text-center">
     <div class="col-sm-10 col-sm-offset-1 text-center">
       <h1>Nearly booked Rider!</h1>
-      <p> Waiting for <%= @owner %> to accept your request to ride an AWESOME Pimped car ! </p>
+      <p> Waiting for <span class="owner"><%= @owner %></span> to accept your request to ride an AWESOME Pimped car ! </p>
+   </div>
+  </div>
 
-      <h3>Booking information</h3>
-      <% if @booking.pimped_car.photo? %>
-        <%= cl_image_tag @booking.pimped_car.photo.path, width: 400, height: 200, crop: :fill %>
-      <% end %>
-      <div class="booking-car-infos">
-      </div>
-      <div class="booking-info">
-        <div class ="status-box">
-          <h4>Status: <span class="status"> <%= @booking.status %></span> </h4>
+  <div class="row text-center">
+    <div class="panel">
+        <div class="col-sm-5">
+          <div class="car_pic">
+            <% if @booking.pimped_car.photo? %>
+              <%= link_to pimped_car_path(@booking.pimped_car_id) do %>
+                <%= cl_image_tag @booking.pimped_car.photo.path, width: 400, height: 200, crop: :fill %>
+              <% end %>
+            <% end %>
+          </div>`
         </div>
-        <div class="col-sm-10 col-sm-offset-1  booking-date-infos">
-            <p> From: <%= @booking.starts_at.strftime("%A %d %B %Y") %></p>
 
-            <p> To: <%= @booking.ends_at.strftime("%A %d %B %Y") %></p>
-        </div>
-        <div class="col-sm-10 col-sm-offset-1 booking-owner-infos">
-            <p>Main Contact: <%= @owner %></p>
-        </div>
-        <div class="col-sm-10 col-sm-offset-1 booking-total">
-          <p>Number of days = <%= (@booking.ends_at - @booking.starts_at).to_i/86400 %> days</p>
-          <p>Total = $<%= @total %></p>
-          <div class="backlink">
-            <%= link_to 'More details on the PimpedCar you just booked', pimped_car_path(@booking.pimped_car_id) %> <br><br>
-            <%= link_to "Review all your bookings", bookings_path %>
+        <div class="col-sm-7">
+          <div class="booking-info">
+            <div class ="status-box">
+              <h4>Status: <span class="status"> <%= @booking.status %></span> </h4>
+            </div>
+            <div class=" booking-date-infos">
+                <p> <%= @booking.starts_at.strftime("%A %d %B %Y") %></p>
+
+                <p> <%= @booking.ends_at.strftime("%A %d %B %Y") %></p>
+            </div>
+            <div class="booking-total">
+             <!--  <p>Number of days = <%= (@booking.ends_at - @booking.starts_at).to_i/86400 %> days</p> -->
+              <p>Total = $<%= @total %></p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="backlink text-center">
+        <%= link_to "Backt to all your bookings", bookings_path, class: "btn btn-primary" %>
+        <%= link_to "Backt to catalog", pimped_cars_path, class: "btn btn-primary" %>
     </div>
   </div>
 </div>

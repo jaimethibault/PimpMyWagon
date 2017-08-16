@@ -5,7 +5,7 @@
         <%= link_to pimped_car_path(pimped_car), class: "card-link" do %>
           <div class="card-container">
 
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.sub5zero.com/sites/default/files/uploads/2010/08/Turtle%20Power.jpg');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pimped_car.photo.path, crop: :fill  %>');">
               <div class="card-price">
                 <h4><%= pimped_car.price_per_day%>$</h4>
               </div>
