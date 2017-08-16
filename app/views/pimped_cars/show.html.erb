@@ -1,4 +1,7 @@
-<!-- Todo: change to PimpedCar photo -->
+<% content_for(:title_tag) do %>
+  <%= @pimped_car.name %>
+<% end %>
+
 <div class="banner"
 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @pimped_car.photo.path, crop: :fill %>')">
 </div>
