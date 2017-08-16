@@ -12,11 +12,12 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
         </div>
         <div class="carowner">
           <div class="ownerimg">
-            <% owner_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+            <% owner = User.find(@pimped_car.user_id) %>
+            <% owner_url = owner.facebook_picture_url || "http://placehold.it/30x30" %>
             <%= image_tag owner_url, class: "avatar" %>
           </div>
           <div class="ownername">
-            <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+            <p><%= owner.first_name %> <%= owner.last_name %></p>
           </div>
         </div>
       </div>
