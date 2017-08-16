@@ -1,8 +1,12 @@
+<% content_for(:title_tag) do %>
+  "My Bookings"
+<% end %>
 <div class="container">
   <div class="row">
     <!-- Method call (defined has helper) to display or not the user bookings  -->
      <% if @bookings.empty? %>
      <% else %>
+      <h3 class="text-center">Your bookings</h3>
       <%= render partial: "user_bookings" %>
       <% end %>
   </div>
@@ -13,13 +17,14 @@
       <% @car = car %>
       <% if car.bookings.empty? %>
         <div class="text-center">
-          <h2 class="text-center"><%= index + 1 %>- <%= car.name %></h2>
+          <h3 class="text-center">Bookings made for <%= car.name %></h3>
           <p>No reservations available yet for this car</p>
         </div>
       <% else %>
-          <h2 class="text-center"><%= index + 1 %>- <%= car.name %></h2>
+          <h3 class="text-center">Bookings made for <%= car.name %></h3>
           <%= render partial: "owner_bookings", object: @car %>
       <% end %>
     <% end %>
   </div>
 </div>
+
