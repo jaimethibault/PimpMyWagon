@@ -10,11 +10,16 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless @disable_nav %>
+   <!--  if @disable_nav
+      render 'shared/navbar_home'
+    else
+      render 'shared/navbar'
+    end -->
     <div class="wrapper">
       <%= yield %>
     </div>
-    <%= render 'shared/footer' %>
+    <%= render 'shared/footer' unless @disable_footer %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
     <%= yield(:after_js) %>
