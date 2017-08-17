@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
     # Get all the cars related to a user
     @cars = PimpedCar.where("user_id = #{current_user.id}")
+    @status_available = ["declined", "accepted"]
+
   end
 
   def show
@@ -20,11 +22,12 @@ class BookingsController < ApplicationController
   end
 
   def update
+
     @booking.update(booking_params)
     if @booking.save
      redirect_to bookings_path
     else
-      render :edit
+      render :index
     end
   end
 

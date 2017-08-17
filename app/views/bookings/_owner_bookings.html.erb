@@ -45,7 +45,13 @@
     </div>
 
       <div class="message-status text-left">
-        <p class="pending"><%= link_to booking.status, edit_booking_path(booking) %></p>
+        <% if booking.status == "pending" %>
+          <%= link_to "Accept", booking_path(booking, booking: {status: "accepted"}), class: "btn btn-success bouton", method: :patch %>
+          <%= link_to "Decline", booking_path(booking, booking: {status: "declined"}), class: "btn btn-danger bouton", method: :patch %>
+        <% else %>
+          <p class="pending"><%= booking.status %></p>
+        <% end %>
+
         <p class="price">$ <%= total(booking) %></p>
       </div>
   </div>
