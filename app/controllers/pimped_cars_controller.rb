@@ -20,10 +20,12 @@ class PimpedCarsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @discount = (@pimped_car.promo.discount*100).to_i
-    now = DateTime.now
-    limit_time = @pimped_car.promo.limit_offer_date
-    @difference = (limit_time - now).to_i
+    unless @pimped_car.promo.blank?
+      @discount = (@pimped_car.promo.discount*100).to_i
+      now = DateTime.now
+      limit_time = @pimped_car.promo.limit_offer_date
+       @difference = (limit_time - now).to_i
+    end
   end
 
   def new
