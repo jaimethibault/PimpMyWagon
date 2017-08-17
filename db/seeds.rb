@@ -1,5 +1,7 @@
 puts "Destroying Bookings"
 Booking.destroy_all
+puts "Destroying Promos"
+Promo.destroy_all
 puts "Destroying PimpedCars"
 PimpedCar.destroy_all
 puts "Destroying Users"
@@ -51,6 +53,20 @@ urls = [
   "http://www.motiveempire.com/wp-content/uploads/2015/07/MG_3163.jpg",
   "http://www.motiveempire.com/wp-content/uploads/2015/04/MG_5125.jpg"
 ]
+
+addresses = [
+"20 Rue de Cléry, 75002 Paris",
+"18 Rue Chappe, 75018 Paris",
+"16 Villa Gaudelet, 75011 Paris",
+"12 Rue Daguerre, 75014 Paris",
+"112 Rue Oberkampf, 75011 Paris",
+"122 Rue Vaugirard, 75015 Paris",
+"25 rue quincampoix 75004 Paris",
+"30 rue de Paradis, 75010 Paris",
+"2 rue des Goncourt, 75011 Paris",
+"44 rue d'Enghien, 75010 Paris"
+]
+
 i = 0
 10.times do
   pimped_car = PimpedCar.new(name: car_name[i])
@@ -59,6 +75,8 @@ i = 0
   pimped_car.user = User.all.sample
   # add a picture
   url = urls[i]
+  address = addresses[i]
+  pimped_car.address = address
   i += 1
   pimped_car.save!
   pimped_car.photo_url = url
@@ -77,3 +95,15 @@ puts "Creating Bookings"
   Booking.create(h)
 end
 puts "Bookings created"
+
+puts "Creating Promos"
+10.times do
+  #todo, change to a random datetime
+  limit_offer_date = Date.new(2017,9,3)
+  discount = [0.20,0.25,0.30,0.35,0.40].sample
+  pimped_car_id = PimpedCar.all.sample.id
+  h = { discount: discount, limit_offer_date: limit_offer_date, pimped_car_id: pimped_car_id,}
+  Promo.create(h)
+end
+puts "Promos created"
+
