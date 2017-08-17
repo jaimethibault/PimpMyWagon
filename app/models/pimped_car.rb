@@ -6,4 +6,6 @@ class PimpedCar < ApplicationRecord
   has_many :bookings
   has_many :promos
   has_attachment :photo
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end
