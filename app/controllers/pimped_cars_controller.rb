@@ -3,7 +3,12 @@ class PimpedCarsController < ApplicationController
   before_action :set_pimped_cars, only: [:show]
 
   def index
-    @pimped_cars = PimpedCar.all
+    @pimped_cars = PimpedCar.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@pimped_cars) do |pimped_car, marker|
+      marker.lat pimped_car.latitude
+      marker.lng pimped_car.longitude
+      marker.infowindow render_to_string(partial: "/pimped_cars/map_box", locals: { pimped_car: pimped_car })
+    end
   end
 
   def show
@@ -27,7 +32,7 @@ class PimpedCarsController < ApplicationController
   private
 
   def set_params
-    params.require(:pimped_car).permit(:name, :price_per_day, :description, :photo)
+    params.require(:pimped_car).permit(:name, :price_per_day, :description, :address, :photo)
   end
 
   def set_pimped_cars
