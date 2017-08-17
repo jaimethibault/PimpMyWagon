@@ -3,9 +3,13 @@ class PimpedCarsController < ApplicationController
   before_action :set_pimped_cars, only: [:show]
 
   def index
+    unless params[:address].nil?
+      @pimped_cars = PimpedCar.near(params[:address], params[:distance])
+    else
+      @pimped_cars = PimpedCar.where.not(latitude: nil, longitude: nil)
+    end
     # if address is inside params (query string) >> @pimped_cars = PimpedCar.near
     # sinon comme d'hab
-    @pimped_cars = PimpedCar.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@pimped_cars) do |pimped_car, marker|
       marker.lat pimped_car.latitude
       marker.lng pimped_car.longitude
