@@ -1,3 +1,4 @@
+require 'date'
 class PimpedCarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_pimped_cars, only: [:show]
@@ -15,8 +16,10 @@ class PimpedCarsController < ApplicationController
 
   def show
     @booking = Booking.new
-    # @discount =
-    # @limit_offer_date =
+    @discount = (@pimped_car.promo.discount*100).to_i
+    now = DateTime.now
+    limit_time = @pimped_car.promo.limit_offer_date
+    @difference = (limit_time - now).to_i
   end
 
   def new
