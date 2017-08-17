@@ -13,6 +13,8 @@ class PimpedCarsController < ApplicationController
 
   def show
     @booking = Booking.new
+    # @discount =
+    # @limit_offer_date =
   end
 
   def new
