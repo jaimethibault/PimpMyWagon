@@ -7,8 +7,6 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
     # Get all the cars related to a user
     @cars = PimpedCar.where("user_id = #{current_user.id}")
-    @status_available = ["declined", "accepted"]
-
   end
 
   def show
@@ -17,9 +15,9 @@ class BookingsController < ApplicationController
     @total = total(@booking)
   end
 
-  def edit
-    @status_available = ["declined", "accepted"]
-  end
+  # def edit
+  #   @status_available = ["declined", "accepted"]
+  # end
 
   def update
 
