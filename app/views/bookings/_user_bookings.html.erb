@@ -2,28 +2,28 @@
     <!-- Iterate on bookings to display each booking for a car -->
     <% @bookings.each do |booking| %>
       <div class="message">
-<!--   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
- -->  <div class="message-name">
-        <p><strong>From: </strong><%= booking.starts_at.strftime("%m/%d/%Y") %> </p>
-      </div>
-      <div class="message-name">
-        <p><strong>To: </strong><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
-      </div>
-      <div class="message-body">
-        <div class="message-details">
-           <p><strong>Renter email:</strong> <%= email_owner(booking) %></p>
+        <img class="avatar-large" src="<%= owner(booking).facebook_picture_url %>">
+        <div class="message-name">
+          <p><strong>From: </strong><%= booking.starts_at.strftime("%m/%d/%Y") %> </p>
         </div>
-         <div class="message-details">
-            <p><strong>Owner email:</strong> <%=email_owner(booking) %></p>
-        </div class="message-details">
-          <div>
-            <p><strong>Rented car:</strong> <%= link_to 'click here', pimped_car_path(booking.pimped_car_id) %></p>
+        <div class="message-name">
+          <p><strong>To: </strong><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
         </div>
-      </div>
+        <div class="message-body">
+          <div class="message-details">
+             <p><strong>Renter:</strong> <%= renter(booking).first_name %></p>
+          </div>
+           <div class="message-details">
+              <p><strong>Owner:</strong> <%= owner(booking).first_name %></p>
+          </div class="message-details">
+            <div>
+              <p><strong>Rented car:</strong> <%= link_to 'click here', pimped_car_path(booking.pimped_car_id) %></p>
+          </div>
+        </div>
 
-        <div class="message-status">
-          <p class=" pending"><%= booking.status %></p>
-          <p class="price">$ <%= total(booking) %></p>
-        </div>
+          <div class="message-status">
+            <p class=" pending"><%= booking.status %></p>
+            <p class="price">$ <%= total(booking) %></p>
+          </div>
       </div>
     <% end %>
