@@ -1,0 +1,16 @@
+.content {
+  display: flex;
+  align-items: stretch;
+}
+
+.container-cards {
+  width: calc(100% - 450px);
+  padding: 10px;
+}
+
+#map {
+  width: 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
