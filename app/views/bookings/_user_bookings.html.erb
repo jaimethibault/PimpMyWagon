@@ -10,14 +10,12 @@
           <p><strong>To: </strong><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
         </div>
         <div class="message-body">
-          <div class="message-details">
-             <p><strong>Renter:</strong> <%= renter(booking).first_name %></p>
-          </div>
+
            <div class="message-details">
               <p><strong>Owner:</strong> <%= owner(booking).first_name %></p>
-          </div class="message-details">
+          </div>
             <div>
-              <p><strong>Rented car:</strong> <%= link_to 'click here', pimped_car_path(booking.pimped_car_id) %></p>
+              <p><strong>Rented car:</strong> <%= link_to car_name(booking).name, pimped_car_path(booking.pimped_car_id) %></p>
           </div>
         </div>
 
