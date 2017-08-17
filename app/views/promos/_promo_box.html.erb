@@ -3,11 +3,11 @@
 <span id="discount">
 <%= @discount %>%OFF
 </span>
-<% @countdown %>
+<%= @countdown %>
 
 
 <script>
-var upgradeTime = 1417163;
+var upgradeTime = <%= @difference %>;
 var seconds = upgradeTime;
 function timer() {
     var days        = Math.floor(seconds/24/60/60);
