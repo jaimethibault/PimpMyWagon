@@ -79,17 +79,17 @@ i = 0
   address = addresses[i]
   pimped_car.address = address
   i += 1
-  pimped_car.save!
   pimped_car.photo_url = url
+  pimped_car.save!
 end
 puts "Pimped Cars created"
 
 puts "Creating Bookings"
 10.times do
   #todo, change to a random datetime
-  d = rand(9..12)
-  m = rand(1..31)
-  ends_at = Date.new(2017,d,m)
+  m = rand(9..12)
+  d = rand(1..31)
+  ends_at = Date.new(2017,m,d)
   starts_at = ends_at-[1,2,3,4,5].sample
   status = "pending"
   pimped_car_id = PimpedCar.all.sample.id
@@ -102,9 +102,9 @@ puts "Bookings created"
 puts "Creating Promos"
 10.times do
   #todo, change to a random datetime
-  d = rand(9..10)
-  m = rand(1..31)
-  limit_offer_date = Date.new(2017,d,m)
+  m = rand(9..10)
+  d = rand(1..31)
+  limit_offer_date = Date.new(2017,m,d)
   discount = [0.20,0.25,0.30,0.35,0.40].sample
   pimped_car_id = PimpedCar.all.sample.id
   h = { discount: discount, limit_offer_date: limit_offer_date, pimped_car_id: pimped_car_id,}
