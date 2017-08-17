@@ -15,16 +15,17 @@ class BookingsController < ApplicationController
     @total = total(@booking)
   end
 
-  def edit
-    @status_available = ["declined", "accepted"]
-  end
+  # def edit
+  #   @status_available = ["declined", "accepted"]
+  # end
 
   def update
+
     @booking.update(booking_params)
     if @booking.save
      redirect_to bookings_path
     else
-      render :edit
+      render :index
     end
   end
 

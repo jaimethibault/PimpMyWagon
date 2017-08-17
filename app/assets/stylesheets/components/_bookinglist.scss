@@ -75,11 +75,13 @@
   font-size: 14px;
   font-weight: bold;
   display: flex;
+  align-items: center;
   p {
     padding-right: 20px;
     margin-bottom: 0px;
     min-width: 100px;
   }
+
 }
 .message-status.title p {
   text-align: left;
@@ -123,4 +125,11 @@
   color: black;
   opacity: 1;
   text-align: center;
+}
+
+.bouton {
+  margin: 0 10px;
+}
+.price {
+  margin-left: 10px;
 }
