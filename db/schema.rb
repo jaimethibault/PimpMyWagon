@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815164531) do
+ActiveRecord::Schema.define(version: 20170817100250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20170815164531) do
     t.index ["user_id"], name: "index_pimped_cars_on_user_id", using: :btree
   end
 
+  create_table "promos", force: :cascade do |t|
+    t.float    "discount"
+    t.datetime "limit_offer_date"
+    t.integer  "pimped_car_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["pimped_car_id"], name: "index_promos_on_pimped_car_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -79,4 +88,5 @@ ActiveRecord::Schema.define(version: 20170815164531) do
   add_foreign_key "bookings", "pimped_cars"
   add_foreign_key "bookings", "users"
   add_foreign_key "pimped_cars", "users"
+  add_foreign_key "promos", "pimped_cars"
 end
