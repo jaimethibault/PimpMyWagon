@@ -10,8 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @owner = email_owner(@booking)
-    @renter = email_renter(@booking)
+    @owner = owner(@booking)
+    @renter = renter(@booking)
     @total = total(@booking)
   end
 
@@ -52,18 +52,23 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def email_owner(booking)
+  def owner(booking)
     pimped_car = PimpedCar.find(booking.pimped_car_id)
     owner_id = pimped_car.user_id
     @owner = User.find(owner_id)
-    @owner.email
+    @owner
   end
 
-  def email_renter(booking)
+  def renter(booking)
     renter = User.find(booking.user_id)
     renter_id = renter
     @renter = User.find(renter_id)
-    @renter.email
+    @renter
+  end
+
+  def car(booking)
+    @car = PimpedCar.find(booking.pimped_car_id)
+    @car
   end
 
   def total(booking)
@@ -78,25 +83,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:starts_at, :ends_at, :status, :user_id, :pimped_car_id)
   end
 
-  # Method that check if a Owner booking table is empty or not.
-  # If empty the partial is not displayed
-  # Only one render is allowed by method
-  # def display_owner(booking, view_path)
-  #   if booking.empty?
-  #   else
-  #     render partial: "#{view_path}"
-  #   end
-  # end
-
-  # Method that check if a user booking table is empty or not.
-  # If empty the partial is not displayed
-  # Only one render is allowed by method
-  # def display_user(booking, view_path)
-  #   if booking.empty?
-  #   else
-  #     render partial: "#{view_path}"
-  #   end
-  # end
-
-  helper_method :total, :email_owner, :email_renter
+  helper_method :total, :owner, :renter, :car
 end
