@@ -1,4 +1,9 @@
-<div>
-  <h1><%= pimped_car.name %></h1>
-  <p><%= pimped_car.price_per_day %></p>
+<div class="size">
+  <div class="map-box" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pimped_car.photo.path, crop: :fill %>');">
+    <div class="map-box-description">
+      <h4><%= pimped_car.name %></h4>
+      <h4><%= pimped_car.price_per_day %> $</h4>
+    </div>
+    <%= link_to "", pimped_car_path(pimped_car), class: "map-box-link" %>
+  </div>
 </div>
