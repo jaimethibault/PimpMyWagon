@@ -1,27 +1,53 @@
+<div class="message-title">
+  <div class="message-meta title">
+    <p>Car</p>
+  </div>
+  <div class="message-name title">
+    <p><strong>From</strong></p>
+  </div>
+  <div class="message-name title">
+    <p><strong>To</strong></p>
+  </div>
+  <div class="message-name title">
+    <p><strong>Owner</strong></p>
+  </div>
+  <div class="message-body title">
+    <div>
+      <p><strong>Rented car</strong></p>
+    </div>
+  </div>
+
+  <div class="message-status title">
+    <p><strong>Statut</strong></p>
+    <p><strong>Total</strong></p>
+  </div>
+</div>
 
     <!-- Iterate on bookings to display each booking for a car -->
-    <% @bookings.each do |booking| %>
-      <div class="message">
-        <img class="avatar-large" src="<%= owner(booking).facebook_picture_url %>">
-        <div class="message-name">
-          <p><strong>From: </strong><%= booking.starts_at.strftime("%m/%d/%Y") %> </p>
-        </div>
-        <div class="message-name">
-          <p><strong>To: </strong><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
-        </div>
-        <div class="message-body">
-
-           <div class="message-details">
-              <p><strong>Owner:</strong> <%= owner(booking).first_name %></p>
-          </div>
-            <div>
-              <p><strong>Rented car:</strong> <%= link_to car_name(booking).name, pimped_car_path(booking.pimped_car_id) %></p>
-          </div>
-        </div>
-
-          <div class="message-status">
-            <p class=" pending"><%= booking.status %></p>
-            <p class="price">$ <%= total(booking) %></p>
-          </div>
-      </div>
+<% @bookings.each do |booking| %>
+  <div class="message">
+    <%= link_to pimped_car_path(booking.pimped_car_id) do %>
+      <%= cl_image_tag car(booking).photo.path, class: "avatar-large", width: 50, height: 50, gravity: "face", crop: :fill %>
     <% end %>
+    <div class="message-name">
+      <p><%= booking.starts_at.strftime("%m/%d/%Y") %></p>
+    </div>
+    <div class="message-name">
+      <p><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
+    </div>
+     <div class="message-name">
+        <p><%= owner(booking).first_name %></p>
+    </div>
+    <div class="message-body">
+
+        <div class="message-details">
+          <p><%= link_to car(booking).name, pimped_car_path(booking.pimped_car_id) %></p>
+      </div>
+    </div>
+
+      <div class="message-status text-left">
+        <p class="pending"><%= booking.status %></p>
+        <p class="price">$ <%= total(booking) %></p>
+      </div>
+  </div>
+<% end %>

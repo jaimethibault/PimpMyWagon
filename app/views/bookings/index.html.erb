@@ -16,10 +16,13 @@
   <div class="row owner-cars">
     <!-- Method call (defined has helper) to display or not owner bookings  -->
     <!-- Iteration on @cars to access each car and check if this car has been booked -->
-    <h3 class="text-center">Bookings for my Pimped Cars</h3>
+    <% if @cars.any? { |car| car.bookings.empty? } %>
+      <h3 class="text-center">Bookings for my Pimped Cars</h3>
+    <% end %>
     <% @cars.each_with_index do |car, index| %>
       <% @car = car %>
       <% if car.bookings.empty? %>
+
         <div class="text-center car-list">
            <h4 class="text-center"><%= cl_image_tag car.photo.path, width: 50, height: 50, gravity: "face", crop: :fill, class: "avatar-large" %> <%= car.name %></h4>
           <p>No reservations available yet for this car</p>

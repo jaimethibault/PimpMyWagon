@@ -11,16 +11,31 @@
   margin-bottom: 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
-.message:last-child {
-  border-bottom: none;
+
+.message-title {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
+
 .message-body {
   flex-grow: 1;
   display: flex;
   align-items: center;
 }
+
+.message-meta {
+  min-width: 50px;
+  p {
+  margin-bottom: 0px;
+  }
+}
 .message-details {
   width: 250px;
+  text-align: left;
 }
 .message-name {
   padding-left: 10px;
@@ -36,6 +51,10 @@
   opacity: 0.6;
   margin: 0px;
 }
+.message-name .title {
+  min-width: 90px;
+}
+
 .message-body {
   padding-left: 10px;
   font-size: 13px;
@@ -56,6 +75,14 @@
   font-size: 14px;
   font-weight: bold;
   display: flex;
+  p {
+    padding-right: 20px;
+    margin-bottom: 0px;
+    min-width: 100px;
+  }
+}
+.message-status.title p {
+  text-align: left;
 }
 .status.accepted {
   color: #04A366;
@@ -84,4 +111,16 @@
 }
 .car-list {
   margin: 30px 0;
+}
+.title {
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+.title p {
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+  opacity: 1;
+  text-align: center;
 }

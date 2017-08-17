@@ -66,7 +66,7 @@ class BookingsController < ApplicationController
     @renter
   end
 
-  def car_name(booking)
+  def car(booking)
     @car = PimpedCar.find(booking.pimped_car_id)
     @car
   end
@@ -83,5 +83,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:starts_at, :ends_at, :status, :user_id, :pimped_car_id)
   end
 
-  helper_method :total, :owner, :renter, :car_name
+  helper_method :total, :owner, :renter, :car
 end
