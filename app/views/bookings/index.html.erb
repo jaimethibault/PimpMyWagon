@@ -7,7 +7,7 @@
 
      <% if @bookings.empty? %>
      <% else %>
-      <div class="text-center">
+      <div class="col-xs-12 text-center">
         <h3 class="text-center car-list">My next rides</h3>
         <%= render partial: "user_bookings", object: @cars  %>
       </div>
