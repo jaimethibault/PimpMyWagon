@@ -88,7 +88,7 @@ puts "Creating Bookings"
 10.times do
   #todo, change to a random datetime
   m = rand(9..12)
-  d = rand(1..31)
+  d = rand(1..28)
   ends_at = Date.new(2017,m,d)
   starts_at = ends_at-[1,2,3,4,5].sample
   status = "pending"
@@ -103,7 +103,7 @@ puts "Creating Promos"
 10.times do
   #todo, change to a random datetime
   m = rand(9..10)
-  d = rand(1..31)
+  d = rand(1..28)
   limit_offer_date = Date.new(2017,m,d)
   discount = [0.20,0.25,0.30,0.35,0.40].sample
   pimped_car_id = PimpedCar.all.sample.id
