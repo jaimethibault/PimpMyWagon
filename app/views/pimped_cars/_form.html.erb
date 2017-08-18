@@ -6,3 +6,18 @@
   <%= f.input :photo, as: :attachinary %>
   <%= f.submit "Add your Pimped Car !", class: "btn btn-danger btn-block" %>
 <% end %>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    var address = $('#pimped_car_address').get(0);
+    if (address) {
+      var autocomplete = new google.maps.places.Autocomplete(address, { types: ['geocode'] });
+      google.maps.event.addDomListener(address, 'keydown', function(e) {
+        if (e.keyCode == 13) {
+          e.preventDefault(); // Do not submit the form on Enter.
+        }
+      });
+    }
+  <% end %>
+<% end %>
+

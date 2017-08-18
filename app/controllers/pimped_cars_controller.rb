@@ -1,9 +1,16 @@
+require 'date'
 class PimpedCarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_pimped_cars, only: [:show]
 
   def index
-    @pimped_cars = PimpedCar.where.not(latitude: nil, longitude: nil)
+    unless params[:address].nil?
+      @pimped_cars = PimpedCar.near(params[:address], params[:distance])
+    else
+      @pimped_cars = PimpedCar.where.not(latitude: nil, longitude: nil)
+    end
+    # if address is inside params (query string) >> @pimped_cars = PimpedCar.near
+    # sinon comme d'hab
     @hash = Gmaps4rails.build_markers(@pimped_cars) do |pimped_car, marker|
       marker.lat pimped_car.latitude
       marker.lng pimped_car.longitude
@@ -13,6 +20,12 @@ class PimpedCarsController < ApplicationController
 
   def show
     @booking = Booking.new
+    unless @pimped_car.promo.blank?
+      @discount = (@pimped_car.promo.discount*100).to_i
+      now = DateTime.now
+      limit_time = @pimped_car.promo.limit_offer_date
+       @difference = (limit_time - now).to_i
+    end
   end
 
   def new

@@ -1,34 +1,61 @@
+<div class="message-title">
+  <div class="message-meta title">
+    <p>User</p>
+  </div>
+  <div class="message-name title">
+    <p><strong>From</strong></p>
+  </div>
+  <div class="message-name title">
+    <p><strong>To</strong></p>
+  </div>
+  <div class="message-name title">
+    <p><strong>Renter</strong></p>
+  </div>
+  <div class="message-body title">
+    <div>
+      <p><strong>Rented car</strong></p>
+    </div>
+  </div>
 
-    <!-- Store each bookings relative to a car -->
-    <% bookings = @car.bookings %>
-    <!-- Iterate on bookings to display each booking for a car -->
-    <% bookings.each do |booking| %>
-      <div class="message">
-<!--   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
- -->  <div class="message-name">
-        <p><strong>From: </strong><%= booking.starts_at.strftime("%m/%d/%Y") %> </p>
-      </div>
-      <div class="message-name">
-        <p><strong>To: </strong><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
-      </div>
-      <div class="message-body">
+  <div class="message-status title">
+    <p><strong>Statut</strong></p>
+    <p><strong>Total</strong></p>
+  </div>
+</div>
+<!-- Store each bookings relative to a car -->
+<% bookings = @car.bookings %>
+<!-- Iterate on bookings to display each booking for a car -->
+<% bookings.each do |booking| %>
+  <div class="message">
+    <%= cl_image_tag renter(booking).facebook_picture_url, class: "avatar-large", width: 50, height: 50, gravity: "face", crop: :fill %>
+    <div class="message-name">
+      <p><%= booking.starts_at.strftime("%m/%d/%Y") %></p>
+    </div>
+    <div class="message-name">
+      <p><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
+    </div>
+    <div class="message-name">
+       <p class="text-center"><%= renter(booking).first_name %></p>
+
+    </div>
+    <div class="message-body">
         <div class="message-details">
-           <p><strong>Renter email:</strong> <%= email_owner(booking) %></p>
-        </div>
-         <div class="message-details">
-            <p><strong>Owner email:</strong> <%=email_owner(booking) %></p>
-        </div class="message-details">
-          <div>
-            <p><strong>Rented car:</strong> <%= link_to 'click here', pimped_car_path(booking.pimped_car_id) %></p>
-        </div>
+          <p><%= link_to @car.name, pimped_car_path(booking.pimped_car_id) %></p>
       </div>
+    </div>
 
-        <div class="message-status">
-          <p class="status pending"><%= link_to booking.status, edit_booking_path(booking) %></p>
-          <p class="price">$ <%= total(booking) %></p>
-        </div>
+      <div class="message-status text-left">
+        <% if booking.status == "pending" %>
+          <%= link_to "Accept", booking_path(booking, booking: {status: "accepted"}), class: "btn btn-success bouton", method: :patch %>
+          <%= link_to "Decline", booking_path(booking, booking: {status: "declined"}), class: "btn btn-danger bouton", method: :patch %>
+        <% else %>
+          <p class="pending"><%= booking.status %></p>
+        <% end %>
+
+        <p class="price">$ <%= total(booking) %></p>
       </div>
-    <% end %>
+  </div>
+<% end %>
 
 
 
