@@ -4,28 +4,26 @@
 
 .promo_box {
   text-align: center;
-  background-color: rgba(0, 30, 30, 0.8);
-  width: 120px;
-  position: absolute;
-  top: 45px;
-  right: 60px;
-  width: 160px;
-  border-radius: 20px;
+  background-color: white;
+  top: 0px;
+  right: 0px;
+  border-radius: 5px;
+  border: 1px solid $red;
+  margin-bottom: 10px;
 }
 
 
 .timer {
-  background-color:rgba(240, 233, 188, 0.95);
-  color: rgba(204, 40, 40, 0.97);
-  border: 1px solid rgba(204, 40, 40, 0.97);
-  padding: 8px;
-  border-radius: 20px;
+  background-color: $red;
+  color: white;
+  border: 1px solid $red;
+  padding: 5px;
   font-size:larger;
 
 }
 
 #discount {
-font-size: 35px;
-color: #F98E90;
+font-size: 30px;
+color: $red;
 font-weight:bolder;
 }
