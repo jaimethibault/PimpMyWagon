@@ -86,5 +86,12 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:starts_at, :ends_at, :status, :user_id, :pimped_car_id)
   end
 
-  helper_method :total, :owner, :renter, :car
+  def class_status(booking)
+    @status = booking.status
+    if @status = "pending"
+    end
+
+  end
+
+  helper_method :total, :owner, :renter, :car, :class_status
 end
