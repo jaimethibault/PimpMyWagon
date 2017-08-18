@@ -13,6 +13,17 @@
 .background-home{
   background-color: $dark-gray;
 }
+
+.row-home h2 {
+  font-family: $headers-font;
+  font-weight: lighter;
+  color: $light-gray;
+  letter-spacing: 0.1em;
+  padding: 40px 0;
+  text-align: center;
+  opacity: 0.9;
+}
+
 .btn-cta-home {
   position: absolute;
   z-index: 1;
@@ -29,10 +40,10 @@ ul, menu, li {
   list-style-type: none;
 }
 /* HOME PAGE */
-.home_first_banner {
-  height: 95vh;
-  width: 100%;
-}
+// .home_first_banner {
+//   height: 95vh;
+//   width: 100%;
+// }
 
 /* VIDEO */
 video {
@@ -194,7 +205,7 @@ video {
   background-position: center;
 }
 
-.card-2:hover {
+.card-home-2:hover {
   box-shadow: 0 14px 28px rgba(242,242,242,0.25), 0 10px 10px rgba(242,242,242,0.22);
 }
 
