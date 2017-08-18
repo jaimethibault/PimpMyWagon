@@ -1,0 +1,22 @@
+<div class="col-xs-12">
+  <%= form_tag pimped_cars_path, method: :get, class: "form-inline form-group" do %>
+    <%= text_field_tag 'address', nil, placeholder: '30 rue de Paradis, Paris, France', class: "form-control", id: "car_address", style: "width: 70%;" %>
+    <%= number_field_tag("distance", value = nil, placeholder: "3km", class: "form-control", style: "width: 15%;") %>
+    <%= button_tag(content = "Search", class: "btn btn-danger") %>
+  <% end %>
+</div>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    var address = $('#car_address').get(0);
+    if (address) {
+      var autocomplete = new google.maps.places.Autocomplete(address, { types: ['geocode'] });
+      google.maps.event.addDomListener(address, 'keydown', function(e) {
+        if (e.keyCode == 13) {
+          e.preventDefault(); // Do not submit the form on Enter.
+        }
+      });
+    }
+  <% end %>
+<% end %>
+
