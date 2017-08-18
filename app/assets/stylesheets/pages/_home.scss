@@ -1,3 +1,5 @@
+// Specific CSS for your home-page
+/* INIT */
 html, body {
   position : relative;
   width: 100%;
@@ -7,18 +9,6 @@ html, body {
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
-body {
-  background-color: $dark-gray;
-}
-.btn-cta-home {
-  position: absolute;
-  z-index: 1;
-  width: 300px;
-  text-align: center;
-  top: calc(50vh - 30px);
-  left: 50%;
-  margin-left: -150px;
-}
 
 ul, menu, li {
   margin: 0;
@@ -26,25 +16,28 @@ ul, menu, li {
   list-style-type: none;
 }
 /* HOME PAGE */
-.home_first_banner {
+.home-page {
   height: 100vh;
   width: 100%;
 }
 
 /* VIDEO */
 .Video video {
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
   transform: translate(-50%,-50%);
+  opacity: 0.8;
 }
 
 /* MENU */
 .Menu {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 3%;
   right: 3%;
@@ -85,105 +78,24 @@ ul, menu, li {
   padding: 10px 15px;
   border-radius: 2px;
   font-weight: lighter;
-  opacity: 0.9;
-  // position: fixed;
-  // bottom: 150px;
-  // right: 550px;
+  opacity: 0.6;
+  position: fixed;
+  bottom: 150px;
+  right: 550px;
   }
 
 .btn-cta-home:hover {
   opacity: 1;
   text-decoration: none;
   color: white;
-  background: $orange;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+   background: $orange;
 }
 .pattern {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-    // background : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCA
-    // YAAADgkQYQAAAANklEQVQYV2NkIAIwEqHGh5AiHwYGhi2EFIEtwqUIbALMKdgUoSjAZxKKf5B
-    // NwjAB3TqcCkAKAaYMBVYChd7+AAAAAElFTkSuQmCC);
+    background : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAANklEQVQYV2NkIAIwEqHGh5AiHwYGhi2EFIEtwqUIbALMKdgUoSjAZxKKf5BNwjAB3TqcCkAKAaYMBVYChd7+AAAAAElFTkSuQmCC);
   z-index: 1;
-  display: flex;
-  justify-content: center;
-}
-
-/* SUPER FAST ELEMENTS */
-.col-text{
-  color: black;
-  background-color: red;
-}
-
-.item-wrap {
-  min-height: 300px;
-
-}
-
-/* HOME CARDS */
-
-.card {
-  background: #fffcfc;
-  border-radius: 2px;
-  display: inline-block;
-  height: 500px;
-  margin: 1rem;
-  position: relative;
-  width: 300px;
-  border-style: 1px solid white;
-  background-color: white;
-  text-align: center
-}
-
-.card-title {
-  color: white;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  padding: 20px;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  font-size: 24px;
-  letter-spacing: 0.3em;
-}
-
-.card-1 {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  height: 350px;
-  background-size: cover !important;
-  background-position: center;
-}
-
-.card-1:hover {
-  box-shadow: 0 14px 28px rgba(242,242,242,0.25), 0 10px 10px rgba(242,242,242,0.22);
-
-}
-
-.card-2 {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  height: 350px;
-  background-size: cover !important;
-  background-position: center;
-}
-
-.card-2:hover {
-  box-shadow: 0 14px 28px rgba(242,242,242,0.25), 0 10px 10px rgba(242,242,242,0.22);
-}
-
-.card-3 {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  height: 350px;
-  background-size: cover !important;
-  background-position: center;
-}
-
-.card-3:hover {
-  box-shadow: 0 14px 28px rgba(242,242,242,0.25), 0 10px 10px rgba(242,242,242,0.22);
-}
-
-.col-xs-4 {
-  margin-bottom: 40px;
 }
