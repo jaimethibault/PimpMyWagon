@@ -29,8 +29,8 @@ ul, menu, li {
   list-style-type: none;
 }
 /* HOME PAGE */
-.home_first_banner {
-  height: 95vh;
+.home-page {
+  height: 100vh;
   width: 100%;
 }
 
@@ -44,11 +44,10 @@ video {
   height: 100%;
   object-fit: cover;
   // transform: translate(-50%,-50%);
-}
 
 /* MENU */
 .Menu {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 3%;
   right: 3%;
@@ -108,17 +107,12 @@ video {
   font-weight: lighter;
   letter-spacing: 0.2em;
 }
+
 .pattern {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // width: 100vh;
-  height: 100vh;
-    // background : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCA
-    // YAAADgkQYQAAAANklEQVQYV2NkIAIwEqHGh5AiHwYGhi2EFIEtwqUIbALMKdgUoSjAZxKKf5B
-    // NwjAB3TqcCkAKAaYMBVYChd7+AAAAAElFTkSuQmCC);
-  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
 }

@@ -4,11 +4,7 @@
 
 <div class="banner"
 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @pimped_car.photo.path, crop: :fill %>')">
-<% unless @pimped_car.promo.blank? %>
-  <div class="promo_box">
-    <%= render 'promos/promo_box', object: @difference %>
-  </div>
-<% end %>
+
 </div>
 <div class="container">
   <div class="row">
@@ -33,6 +29,11 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
       <p><%= @pimped_car.description %></p>
     </div>
     <div class="col-md-4 car-booking booking-form">
+      <% unless @pimped_car.promo.blank? %>
+        <div class="promo_box">
+          <%= render 'promos/promo_box', object: @difference %>
+        </div>
+      <% end %>
       <%= render 'bookings/form_on_show' %>
     </div>
   </div>
