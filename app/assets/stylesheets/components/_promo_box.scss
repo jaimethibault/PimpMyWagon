@@ -5,28 +5,25 @@
 .promo_box {
   text-align: center;
   background-color: white;
-  width: 120px;
-  position: absolute;
-  bottom: 0px;
-  right: 90px;
-  width: 320px;
+  top: 0px;
+  right: 0px;
   border-radius: 5px;
-  border: 1px solid #E76F51;
+  border: 1px solid $red;
+  margin-bottom: 10px;
 }
 
 
 .timer {
-  background-color: #E76F51;
+  background-color: $red;
   color: white;
-  border: 1px solid #E76F51;
+  border: 1px solid $red;
   padding: 5px;
-  border-radius: 5px;
   font-size:larger;
 
 }
 
 #discount {
 font-size: 30px;
-color: #F98E90;
+color: $red;
 font-weight:bolder;
 }
