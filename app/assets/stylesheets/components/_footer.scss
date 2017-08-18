@@ -30,3 +30,36 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+.sm-footer {
+    display: none;
+  }
+
+.mobile-footer {
+  display: none;
+}
+
+@media (max-width: 715px) {
+  .desktop-footer {
+    display: none;
+  }
+  .sm-footer {
+    display: unset;
+  }
+}
+
+@media (max-width: 610px) {
+  .desktop-footer {
+    display: none;
+  }
+  .sm-footer {
+    display: none;
+  }
+  .footer-links {
+    display: none;
+  }
+  .mobile-footer {
+    display: unset;
+  }
+}
+
