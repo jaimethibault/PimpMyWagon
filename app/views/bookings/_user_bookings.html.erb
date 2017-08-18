@@ -2,13 +2,16 @@
   <div class="message-meta title">
     <p>Car</p>
   </div>
-  <div class="message-name title">
+  <div class="message-name title desktop">
     <p><strong>From</strong></p>
   </div>
-  <div class="message-name title">
+  <div class="message-name title desktop">
     <p><strong>To</strong></p>
   </div>
-  <div class="message-name title">
+   <div class="message-name title mobile">
+    <p><strong>Date</strong></p>
+  </div>
+  <div class="message-name title user-details">
     <p><strong>Owner</strong></p>
   </div>
   <div class="message-body title">
@@ -19,7 +22,7 @@
 
   <div class="message-status title">
     <p><strong>Statut</strong></p>
-    <p><strong>Total</strong></p>
+    <p class="price"><strong>Total</strong></p>
   </div>
 </div>
 
@@ -29,17 +32,20 @@
     <%= link_to pimped_car_path(booking.pimped_car_id) do %>
       <%= cl_image_tag car(booking).photo.path, class: "avatar-large", width: 50, height: 50, gravity: "face", crop: :fill %>
     <% end %>
-    <div class="message-name">
+    <div class="message-name desktop">
       <p><%= booking.starts_at.strftime("%m/%d/%Y") %></p>
     </div>
-    <div class="message-name">
+    <div class="message-name desktop">
       <p><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
     </div>
-     <div class="message-name">
+    <div class="message-name mobile">
+      <p><%= booking.starts_at.strftime("%m/%d") %></p>
+      <p><%= booking.ends_at.strftime("%m/%d") %></p>
+    </div>
+     <div class="message-name user-details">
         <p><%= owner(booking).first_name %></p>
     </div>
     <div class="message-body">
-
         <div class="message-details">
           <p><%= link_to car(booking).name, pimped_car_path(booking.pimped_car_id) %></p>
       </div>
