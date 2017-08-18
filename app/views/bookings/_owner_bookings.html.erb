@@ -2,13 +2,16 @@
   <div class="message-meta title">
     <p>User</p>
   </div>
-  <div class="message-name title">
+  <div class="message-name title desktop">
     <p><strong>From</strong></p>
   </div>
-  <div class="message-name title">
+  <div class="message-name title desktop">
     <p><strong>To</strong></p>
   </div>
-  <div class="message-name title">
+  <div class="message-name title mobile">
+    <p><strong>Date</strong></p>
+  </div>
+  <div class="message-name title user-details">
     <p><strong>Renter</strong></p>
   </div>
   <div class="message-body title">
@@ -28,13 +31,17 @@
 <% bookings.each do |booking| %>
   <div class="message">
     <%= cl_image_tag renter(booking).facebook_picture_url, class: "avatar-large", width: 50, height: 50, gravity: "face", crop: :fill %>
-    <div class="message-name">
+    <div class="message-name desktop">
       <p><%= booking.starts_at.strftime("%m/%d/%Y") %></p>
     </div>
-    <div class="message-name">
+    <div class="message-name desktop">
       <p><%= booking.ends_at.strftime("%m/%d/%Y") %></p>
     </div>
-    <div class="message-name">
+    <div class="message-name mobile">
+      <p><%= booking.starts_at.strftime("%m/%d") %></p>
+      <p><%= booking.ends_at.strftime("%m/%d") %></p>
+    </div>
+    <div class="message-name user-details">
        <p class="text-center"><%= renter(booking).first_name %></p>
 
     </div>
@@ -46,12 +53,19 @@
 
       <div class="message-status text-left">
         <% if booking.status == "pending" %>
+        <div class="boutons">
           <%= link_to "Accept", booking_path(booking, booking: {status: "accepted"}), class: "btn btn-success bouton", method: :patch %>
           <%= link_to "Decline", booking_path(booking, booking: {status: "declined"}), class: "btn btn-danger bouton", method: :patch %>
+          </div>
         <% else %>
-          <p class="pending"><%= booking.status %></p>
+          <% if booking.status == "pending" %>
+            <p class="pending"><%= booking.status %></p>
+          <% elsif booking.status == "accepted" %>
+            <p class="accepted"><%= booking.status %></p>
+          <% elsif booking.status == "declined" %>
+            <p class="declined"><%= booking.status %></p>
+          <% end %>
         <% end %>
-
         <p class="price">$ <%= total(booking) %></p>
       </div>
   </div>

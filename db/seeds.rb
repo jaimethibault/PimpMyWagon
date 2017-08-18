@@ -9,16 +9,26 @@ User.destroy_all
 
 puts "Creating Users"
 i = 0
+users = [
+  "jackie@michel.com",
+  "michel@jackie.com",
+  "micheline@jackie.com"
+]
+first_names = [
+  "Jackie",
+  "Michel",
+  "Micheline"
+]
 3.times do
   user = User.new
-  user.email = Faker::Internet.email
+  user.email = users[i]
   user.password = 'password'
-  user.first_name = Faker::Name.first_name
+  user.first_name = first_names[i]
   user.last_name = Faker::Name.last_name
   urls = [
-    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/c25.0.150.150/1622165_10152629789833079_1383118263_n.jpg?oh=5f54a89ac3f182ab5512a55cffb434fb&oe=5A34E9A4",
-    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/c0.53.320.320/p320x320/31831_127280883952890_785031_n.jpg?oh=911201f6292f661157f48cc764d165f5&oe=5A31B029",
-    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-1/p320x320/17757603_10154567963552817_4400652973366918292_n.jpg?oh=0e75a4524b04d3c45127dcfd18607611&oe=59EBFA1C"
+    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/10997490_907097779334969_1284262528561985815_n.jpg?oh=c3afa5c308ce7405d109656dda4ffd50&oe=5A2F762F",
+    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/20799136_274376209715766_7099253975910970765_n.jpg?oh=e84997278e80801d94f81ca917120c19&oe=5A1A935E",
+    "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/19875558_10155671439642176_1610883172945385131_n.jpg?oh=482cbb47e3786e5c1c813330c294645e&oe=5A16D6B7"
   ]
   user.facebook_picture_url = urls[i]
   user.save!
@@ -37,7 +47,13 @@ car_name = [
   "Mercedes Yellox SUV oh my god",
   "Keke's 3 wheels motorcycle",
   "Green classy Ferrari",
-  "Red classic Ferrari"
+  "Red classic Ferrari",
+  "Green Cadillac",
+  "Seat Ibiza grey classy",
+  "Black Corbillard",
+  "Purple Butterfly doors incognito",
+  "World Grand Prix 95 ecars",
+  "Mat Black Plymouth"
 ]
 urls = [
   "http://foreignaffairsmotorsports.com/wp-content/uploads/2016/11/awe-tuning.jpg",
@@ -50,26 +66,36 @@ urls = [
   "http://www.covingtonscustoms.com/Pics/TopBanner/05.jpg",
   "http://modena-motorsport.de/wp-content/uploads/layerslider/FullWidth-Modena-Motorsport-Home-I/Modena-Motorsport-4.jpg",
   "http://modena-motorsport.de/wp-content/uploads/2016/12/Modena-Motorsport-16.jpg",
-  "http://www.motiveempire.com/wp-content/uploads/2015/07/MG_3163.jpg",
-  "http://www.motiveempire.com/wp-content/uploads/2015/04/MG_5125.jpg"
+  "http://www.liftabrand.com/portals/0/slide.jpg",
+  "http://www.motiveempire.com/wp-content/uploads/2015/04/MG_5125.jpg",
+  "http://www.pimpbuilder.com/wp-content/uploads/2015/09/Car-4.jpg",
+  "http://goddesspromotionstt.com/wp-content/uploads/2014/05/Pimp-My-Ride-Car.jpg",
+  "https://s-media-cache-ak0.pinimg.com/originals/0f/b3/69/0fb369aa22b1e2fe1ba10a16de23d25a.jpg",
+  "https://s-media-cache-ak0.pinimg.com/originals/53/11/04/531104de90852edd5708e20b2915c357.jpg"
 ]
 
 addresses = [
 "20 Rue de Cléry, 75002 Paris",
-"18 Rue Chappe, 75018 Paris",
-"16 Villa Gaudelet, 75011 Paris",
-"12 Rue Daguerre, 75014 Paris",
+"242 Rue de l'Alma, 59100 Roubaix",
+"Chemin des Postes, 62220 Carvin",
+"La Plaine Saint-Denis, Saint-Denis",
 "112 Rue Oberkampf, 75011 Paris",
-"122 Rue Vaugirard, 75015 Paris",
-"25 rue quincampoix 75004 Paris",
-"30 rue de Paradis, 75010 Paris",
-"2 rue des Goncourt, 75011 Paris",
-"44 rue d'Enghien, 75010 Paris"
+"Rue Alain Colas, 80136 Rivery",
+"Avenue Montaigne, 60000 Beauvais",
+"Zac de Mercières n°3, 8 Rue du Fonds Pernant, 60200 Compiègne",
+"Avenue François Mitterrand, 95300 Pontoise",
+"Voie Communale ZAC du Mont Renaud, 60400 Noyon",
+"74 Rue du Général Leclerc, 60210 Grandvilliers",
+"150 Boulevard de Strasbourg, 94130 Nogent-sur-Marne",
+"166-170 Boulevard Robert Ballanger, 93420 Villepinte",
+"1 Avenue Paul Langevin, 95200 Sarcelles",
+"240 Chaussée Watt, 59200 Tourcoing",
+"58 Avenue Winston Churchill, 62000 Arras"
 ]
 
 
 i = 0
-10.times do
+16.times do
   pimped_car = PimpedCar.new(name: car_name[i])
   pimped_car.description = Faker::Lorem.paragraph
   pimped_car.price_per_day = rand(50..100)
@@ -85,10 +111,10 @@ end
 puts "Pimped Cars created"
 
 puts "Creating Bookings"
-10.times do
+16.times do
   #todo, change to a random datetime
   m = rand(9..12)
-  d = rand(1..31)
+  d = rand(1..28)
   ends_at = Date.new(2017,m,d)
   starts_at = ends_at-[1,2,3,4,5].sample
   status = "pending"
@@ -100,10 +126,10 @@ end
 puts "Bookings created"
 
 puts "Creating Promos"
-10.times do
+16.times do
   #todo, change to a random datetime
   m = rand(9..10)
-  d = rand(1..31)
+  d = rand(1..28)
   limit_offer_date = Date.new(2017,m,d)
   discount = [0.20,0.25,0.30,0.35,0.40].sample
   pimped_car_id = PimpedCar.all.sample.id
@@ -111,4 +137,3 @@ puts "Creating Promos"
   Promo.create(h)
 end
 puts "Promos created"
-

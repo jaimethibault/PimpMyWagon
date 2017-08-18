@@ -72,7 +72,7 @@
   margin: 6px 0;
 }
 .message-status {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -86,19 +86,17 @@
 .message-status.title p {
   text-align: left;
 }
-.status.accepted {
+.accepted {
   color: #04A366;
 }
-.status.declined {
+.declined {
   color: red;
-}
-.status.pending {
-  color: lightgrey;
 }
 
 .pending {
   color: orange;
 }
+
 .pending a {
   text-decoration: none;
   color: orange;
@@ -113,6 +111,16 @@
 }
 .car-list {
   margin: 30px 0;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+  }
+}
+.car-list-div a {
+  text-decoration: none;
 }
 .title {
   font-weight: bold;
@@ -132,4 +140,78 @@
 }
 .price {
   margin-left: 10px;
+}
+
+.mobile {
+  display: none;
+}
+@media (max-width: 1200px) {
+ .boutons {
+    display: flex;
+    flex-direction: column;
+  }
+
+ .bouton {
+    font-size: 12px;
+    margin-top: 3px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 995px) {
+  .message-body {
+    display: none;
+  }
+  .user-details {
+    flex-grow: 1;
+  }
+  .message-status p {
+    text-align: center;
+  }
+  .message-status.title p {
+    text-align: center;
+  }
+  .boutons {
+    display: flex;
+    flex-direction: column;
+  }
+  .bouton {
+    font-size: 10px;
+    margin-top: 3px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobile {
+    display: block;
+    padding-left: 5px;
+  }
+  .desktop {
+    display: none;
+  }
+  .user-details {
+    padding-left: 5px;
+  }
+  .message {
+    padding: 20px 10px;
+  }
+  .message-name {
+    min-width: 30px;
+  }
+  .message-status p {
+    padding-right: 20px;
+    margin-bottom: 0px;
+    min-width: 72px;
+    text-align: center;
+    font-size: 13px
+  }
+   .message-status.title p {
+    padding-right: 20px;
+    margin-bottom: 0px;
+    min-width: 72px;
+    text-align: center;
+    font-size: 13px
+  }
+
 }

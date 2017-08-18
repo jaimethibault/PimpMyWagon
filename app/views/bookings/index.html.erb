@@ -7,7 +7,7 @@
 
      <% if @bookings.empty? %>
      <% else %>
-      <div class="text-center">
+      <div class="col-xs-12 text-center">
         <h3 class="text-center car-list">My next rides</h3>
         <%= render partial: "user_bookings", object: @cars  %>
       </div>
@@ -24,11 +24,19 @@
       <% if car.bookings.empty? %>
 
         <div class="text-center car-list">
-           <h4 class="text-center"><%= cl_image_tag car.photo.path, width: 50, height: 50, gravity: "face", crop: :fill, class: "avatar-large" %> <%= car.name %></h4>
+          <div class="car-list-div">
+            <%= link_to pimped_car_path(car) do %>
+              <h4 class="text-center car-list"><%= cl_image_tag car.photo.path, width: 50, height: 50, gravity: "face", crop: :fill, class: "avatar-rectangle" %> <%= car.name %></h4>
+             <% end %>
+           </div>
           <p>No reservations available yet for this car</p>
         </div>
       <% else %>
-          <h4 class="text-center car-list"><%= cl_image_tag car.photo.path, width: 50, height: 50, gravity: "face", crop: :fill, class: "avatar-large" %> <%= car.name %></h4>
+      <div class="car-list-div">
+        <%= link_to pimped_car_path(car) do %>
+          <h4 class="text-center car-list"><%= cl_image_tag car.photo.path, width: 50, height: 50, gravity: "face", crop: :fill, class: "avatar-rectangle" %> <%= car.name %></h4>
+        <% end %>
+      </div>
           <%= render partial: "owner_bookings", object: @car %>
       <% end %>
     <% end %>
