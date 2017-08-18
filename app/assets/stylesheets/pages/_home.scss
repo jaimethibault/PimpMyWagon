@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Specific CSS for your home-page
 /* INIT */
 html, body {
@@ -9,6 +10,32 @@ html, body {
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
+=======
+// html, body {
+//   position : relative;
+//   width: 100%;
+//   height: 100%;
+//   margin : 0;
+//   padding : 0;
+//   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+// }
+
+// body {
+//   background-color: $dark-gray;
+// }
+.background-home{
+  background-color: $dark-gray;
+}
+.btn-cta-home {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+  text-align: center;
+  top: calc(80vh - 30px);
+  left: 50%;
+  margin-left: -150px;
+}
+>>>>>>> 7bdb6a467d4094b7a7492c0e062f53d023a97574
 
 ul, menu, li {
   margin: 0;
@@ -16,12 +43,18 @@ ul, menu, li {
   list-style-type: none;
 }
 /* HOME PAGE */
+<<<<<<< HEAD
 .home-page {
   height: 100vh;
+=======
+.home_first_banner {
+  height: 95vh;
+>>>>>>> 7bdb6a467d4094b7a7492c0e062f53d023a97574
   width: 100%;
 }
 
 /* VIDEO */
+<<<<<<< HEAD
 .Video video {
   position: fixed;
   z-index: -1;
@@ -33,6 +66,17 @@ ul, menu, li {
   height: auto;
   transform: translate(-50%,-50%);
   opacity: 0.8;
+=======
+video {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  // transform: translate(-50%,-50%);
+>>>>>>> 7bdb6a467d4094b7a7492c0e062f53d023a97574
 }
 
 /* MENU */
@@ -47,6 +91,8 @@ ul, menu, li {
 }
 
 .Menu-item {
+  font-family: $headers-font;
+  font-weight: lighter;
   width: 200px;
   font-size: 1.5em;
   letter-spacing: 0.5em;
@@ -77,17 +123,27 @@ ul, menu, li {
   background: $orange;
   padding: 10px 15px;
   border-radius: 2px;
+  font-family: $headers-font;
   font-weight: lighter;
+<<<<<<< HEAD
   opacity: 0.6;
   position: fixed;
   bottom: 150px;
   right: 550px;
+=======
+  letter-spacing: 0.2em;
+  opacity: 0.9;
+  // position: fixed;
+  // bottom: 150px;
+  // right: 550px;
+>>>>>>> 7bdb6a467d4094b7a7492c0e062f53d023a97574
   }
 
 .btn-cta-home:hover {
   opacity: 1;
   text-decoration: none;
   color: white;
+<<<<<<< HEAD
    background: $orange;
 }
 .pattern {
@@ -95,7 +151,115 @@ ul, menu, li {
   top: 0;
   left: 0;
   width: 100%;
+=======
+  background: $orange;
+  font-family: $headers-font;
+  font-weight: lighter;
+  letter-spacing: 0.2em;
+}
+.pattern {
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // width: 100vh;
+>>>>>>> 7bdb6a467d4094b7a7492c0e062f53d023a97574
   height: 100vh;
     background : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAANklEQVQYV2NkIAIwEqHGh5AiHwYGhi2EFIEtwqUIbALMKdgUoSjAZxKKf5BNwjAB3TqcCkAKAaYMBVYChd7+AAAAAElFTkSuQmCC);
   z-index: 1;
+<<<<<<< HEAD
+=======
+  display: flex;
+  justify-content: center;
+}
+
+
+/* SUPER FAST ELEMENTS */
+.col-text{
+  color: black;
+  background-color: red;
+}
+
+.item-wrap {
+  min-height: 300px;
+  background-color: $dark-gray;
+}
+
+/* HOME CARDS */
+
+.card-group {
+  background-color: $dark-gray;
+}
+
+.card-home {
+  background: #fffcfc;
+  border-radius: 2px;
+  display: inline-block;
+  height: 500px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+  border-style: 1px solid white;
+  background-color: white;
+  text-align: center
+}
+
+.card-home-title {
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 20px;
+  font-family: $headers-font;
+  font-size: 24px;
+  font-weight: lighter;
+  letter-spacing: 0.3em;
+  opacity: 0.9;
+  a {
+  text-decoration: none;
+  color: white;
+  }
+  a:hover {
+  opacity:1;
+  }
+}
+
+.card-home-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  height: 350px;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.card-home-1:hover {
+  box-shadow: 0 14px 28px rgba(242,242,242,0.25), 0 10px 10px rgba(242,242,242,0.22);
+
+}
+
+.card-home-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  height: 350px;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.card-2:hover {
+  box-shadow: 0 14px 28px rgba(242,242,242,0.25), 0 10px 10px rgba(242,242,242,0.22);
+}
+
+.card-home-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  height: 350px;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.card-home-3:hover {
+  box-shadow: 0 14px 28px rgba(242,242,242,0.25), 0 10px 10px rgba(242,242,242,0.22);
+}
+
+.col-xs-4 {
+  margin-bottom: 40px;
+>>>>>>> 7bdb6a467d4094b7a7492c0e062f53d023a97574
 }

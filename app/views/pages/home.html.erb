@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class=home-page>
   <menu class="Menu">
     <% if user_signed_in? %>
@@ -18,4 +19,80 @@
     <%= link_to "Rent a Pimped Car", pimped_cars_path, class: "btn-cta-home" %>
   </div>
   </div>
+=======
+<div class="pattern">
+  <video id="video" autoplay loop id="video-background" muted width="100%">
+    <source src="http://res.cloudinary.com/dw5ekt0rf/video/upload/v1502966890/I%CC%87KAS_TEASER_TANITIM_yfy1yw.mp4" type="video/mp4">
+  </video>
+
+<%= link_to "Rent a PIMPED Car", pimped_cars_path, class: "btn-cta-home" %>
+</div>
+
+<div class="background-home">
+  <div class="home_first_banner">
+    <menu class="Menu">
+      <% if user_signed_in? %>
+      <li class="Menu-item" id="btn-1"> <%= link_to "Profile", bookings_path %></li>
+      <% end %>
+      <li class="Menu-item" id="btn-2"><%= link_to "Log in", new_user_session_path %></li>
+      <li class="Menu-item" id="btn-3"><%= link_to "Add", new_pimped_car_path %></li>
+      <li class="Menu-item" id="btn-4"><%= link_to "Cars", pimped_cars_path %></li>
+    </menu>
+  </div>
+
+  <div class="item-wrap container">
+     <div class="row">
+
+        <div class="col-xs-4">
+          <div class="col-text">
+            <p>Blabla</p>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="col-text">
+            <p>Blabla</p>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="col-text">
+            <p>Blabla</p>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="card-group container">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="card-home-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www1.theladbible.com/images/content/54f056a309fc4.JPG');">
+            <h4 class="card-home-title"><%= link_to "FAST", pimped_cars_path %></h4>
+          </div>
+          </div>
+      <div class="col-xs-4">
+        <div class="card-home-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.ytimg.com/vi/zOWcBe4Maxk/maxresdefault.jpg');">
+            <h4 class="card-home-title"><%= link_to "SUPER FAST", pimped_cars_path %></h4>
+          </div>
+        </div>
+      <div class="col-xs-4">
+        <div class="card-home-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.skitzone.com/wp-content/uploads/2011/01/pimped-car.jpg');">
+            <h4 class="card-home-title"><%= link_to "FUR-IOUS", pimped_cars_path %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="footer-home">
+    <div class="footer-home-links">
+      <a href="#"><i class="fa fa-github"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+  </div>
+  <div class="footer-home-copyright">
+      This entire hmtl is made with <i class="fa fa-heart"></i> and pain at Le Wagon
+    </div>
+  </div>
+>>>>>>> 7bdb6a467d4094b7a7492c0e062f53d023a97574
 </div>
