@@ -35,8 +35,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.starts_at = Date.strptime(booking_params[:starts_at], ("%m/%d/%Y"))
-    @booking.ends_at = Date.strptime(booking_params[:ends_at], ("%m/%d/%Y"))
     @pimpedcar = PimpedCar.find(params[:pimped_car_id])
     @booking.pimped_car = @pimpedcar
     @booking.user = current_user
@@ -86,5 +84,12 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:starts_at, :ends_at, :status, :user_id, :pimped_car_id)
   end
 
-  helper_method :total, :owner, :renter, :car
+  def class_status(booking)
+    @status = booking.status
+    if @status = "pending"
+    end
+
+  end
+
+  helper_method :total, :owner, :renter, :car, :class_status
 end

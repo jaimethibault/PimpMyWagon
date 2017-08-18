@@ -1,12 +1,5 @@
 .banner {
   height: 70vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-position: center !important;
-}
-
-@media(max-width: 720px) {
-  .banner {
-    height: 50vh;
-    background-position: center !important;
-  }
+  background-size: cover !important;
 }
