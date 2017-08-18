@@ -7,6 +7,9 @@
 
 <% content_for(:after_js) do %>
   <script>
-      $(".datepicker").datepicker();
+      $(".datepicker").datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-1d'
+});
   </script>
 <% end %>
