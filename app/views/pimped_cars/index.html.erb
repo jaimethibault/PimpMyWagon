@@ -7,11 +7,7 @@
           <div class="col-xs-12 col-sm-6">
             <%= link_to pimped_car_path(pimped_car), class: "card-link" do %>
               <div class="card-container">
-                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path pimped_car.photo.path, crop: :fill %>');">
-                  <div class="card-price">
-                    <h4><%= pimped_car.price_per_day%>$</h4>
-                  </div>
-                </div>
+
               <!--  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
                 <div class="card-footer">
                   <div class="card-details">

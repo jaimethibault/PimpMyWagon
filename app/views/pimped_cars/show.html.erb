@@ -26,6 +26,9 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
         </div>
       </div>
       <hr>
+      <p><i class="fa fa-map-marker" aria-hidden="true">
+     <%= @pimped_car.address %></i></p>
+      <hr>
       <p><%= @pimped_car.description %></p>
     </div>
     <div class="col-md-4 car-booking booking-form">
@@ -36,5 +39,9 @@ style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(
       <% end %>
       <%= render 'bookings/form_on_show' %>
     </div>
-  </div>
+    <hr>
+    <div class="static_card">
+
+    </div>
+</div>
 </div>
