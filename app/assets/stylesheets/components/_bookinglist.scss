@@ -86,19 +86,17 @@
 .message-status.title p {
   text-align: left;
 }
-.status.accepted {
+.accepted {
   color: #04A366;
 }
-.status.declined {
+.declined {
   color: red;
-}
-.status.pending {
-  color: lightgrey;
 }
 
 .pending {
   color: orange;
 }
+
 .pending a {
   text-decoration: none;
   color: orange;
@@ -113,6 +111,16 @@
 }
 .car-list {
   margin: 30px 0;
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+  }
+}
+.car-list-div a {
+  text-decoration: none;
 }
 .title {
   font-weight: bold;
@@ -136,6 +144,18 @@
 
 .mobile {
   display: none;
+}
+@media (max-width: 1200px) {
+ .boutons {
+    display: flex;
+    flex-direction: column;
+  }
+
+ .bouton {
+    font-size: 12px;
+    margin-top: 3px;
+    margin-right: 20px;
+  }
 }
 
 @media (max-width: 995px) {
